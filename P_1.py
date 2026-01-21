@@ -18,7 +18,7 @@ height=float(input("Enter your height including decimal: "))
 print("Your height is:", height)
 
 # Boolean
-is_student=input("Are you a student? (yes/no): ").strip()=="yes"
+is_student=input("Are you a student? (yes/no): ").strip()=="yes" #strip() is used to remove any extra spaces. Ex " yes " becomes "yes"
 print("Is student:", is_student)
 
 # Find area of a square
