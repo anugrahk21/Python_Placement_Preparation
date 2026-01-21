@@ -61,15 +61,6 @@ print("Total marks obtained:", total_marks)
 #These are more complex data structures that can hold multiple values.
 
 
-#Simple Calculator
-a=int(input("Enter first number: "))
-b=int(input("Enter second number: "))
-print("Addition:", a+b)
-print("Subtraction:", a-b)
-print("Multiplication:", a*b)
-print("Division: ", a/b)
-
-
 #List
 
 # Marks of 5 subjects
@@ -77,21 +68,3 @@ marks=eval(input("Enter marks of 5 subjects separated by commas: "))
 print("Marks entered:", marks)
 print(f"Average marks is: {sum(marks)/len(marks):.2f}")
 # :.2f is used to format the float value to 2 decimal places, E.g., 75.67
-
-#Item details
-n=int(input("Enter number of items: "))
-#array of size n to store item details
-item_details=[]
-gst=18
-for i in range(n):
-    item_name=input(f"Enter name of item {i+1}: ") #i+1 because indexing starts from 0
-    price_per_item=float(input(f"Enter price per item of {item_name}: "))
-    final_cost=price_per_item + (price_per_item*gst/100)
-    item_details.append([item_name, price_per_item, final_cost]) #Appending a list of item details to the main list
-    #Therefore, its called a nested list
-print(item_details) #Printing the entire list, which contains sub-lists
-print("Item Details (Name, Price per item, Final cost including GST):")
-for i in item_details:
-    print(i)
-    #or
-    print(f"Price per item of {i[0]} is {i[1]} and final cost including GST is {i[2]}")
