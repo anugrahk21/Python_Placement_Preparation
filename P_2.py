@@ -42,3 +42,10 @@ elif (num2>num1) and (num2>num3):
     print(f"{num2} is the largest number")
 else:
     print(f"{num3} is the largest number")
+
+# Simple Interest Calculator
+p=float(input("Enter principal amount: "))
+r=float(input("Enter rate: "))
+t=float(input("Enter time: "))
+si=(p*r*t)/100
+print("Simple Interest is:", si)
