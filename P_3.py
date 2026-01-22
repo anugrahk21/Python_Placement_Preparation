@@ -45,3 +45,17 @@ else:
 n=int (input("Enter a number: "))
 for i in range(1,11):
     print(n, "X",i,"=", n*i)
+
+
+#prime number checker
+num=int(input("Enter a number: "))
+prime=True
+if(num<=1):
+    print(f"{num} is not a prime number")
+for i in range(2,num): #or range(2,num//2+1) to optimize
+    if(num%i==0):
+        print(num,"is not a prime number")
+        prime=False
+        break
+if prime:
+    print(num,"is a prime number")
