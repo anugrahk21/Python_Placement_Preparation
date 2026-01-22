@@ -37,3 +37,8 @@ elif(time>=16 and time<19):
     print("Good Evening")
 else:
     print("Good Night")
+
+# Multiplication table of n program
+n=int (input("Enter a number: "))
+for i in range(1,11):
+    print(n, "X",i,"=", n*i)
