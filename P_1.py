@@ -61,6 +61,8 @@ print("Total marks obtained:", total_marks)
 #These are more complex data structures that can hold multiple values.
 
 
+#Other data structures: List, Tuple, Set, Dictionary
+
 #List
 
 # Marks of 5 subjects
@@ -68,3 +70,28 @@ marks=eval(input("Enter marks of 5 subjects separated by commas: "))
 print("Marks entered:", marks)
 print(f"Average marks is: {sum(marks)/len(marks):.2f}")
 # :.2f is used to format the float value to 2 decimal places, E.g., 75.67
+
+
+#Tuple
+# Coordinates of a point in 2D space
+
+point=eval(input("Enter coordinates of a point (x,y) separated by comma: "))
+print("Point coordinates:", point)
+for i in point:
+    print(i)
+print(point[0])  #x coordinate
+
+
+#Set
+# Unique marks obtained in different subjects
+
+marks={1,2,3,4,1,2}
+print(marks) #removes duplicates
+
+#Dictionary
+# Key-Value pairs
+
+class_a={"Anu":100,"Appu":99}
+print(class_a)
+for student in class_a:
+    print(student, ":", class_a[student]) #student -> key, class_a[student] -> value
