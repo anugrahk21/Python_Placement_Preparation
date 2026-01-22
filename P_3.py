@@ -9,6 +9,7 @@ while True:
     else:
         print("Access Denied")
 
+
 # ATM dispensing cash
 
 withdraw_amount=int(input("Enter amount to withdraw: "))
@@ -38,7 +39,9 @@ elif(time>=16 and time<19):
 else:
     print("Good Night")
 
+
 # Multiplication table of n program
+
 n=int (input("Enter a number: "))
 for i in range(1,11):
     print(n, "X",i,"=", n*i)
