@@ -37,7 +37,11 @@ Feel free to suggest improvements or add new practice problems! Every bit of hel
 
 Ready to discuss Python or share interview experiences? Let's connect!
 
-GitHub: @anugrahk21
+**Anugrah K.**  
+AI & Cybersecurity Enthusiast  
+📧 [Email](mailto:anugrah.k910@gmail.com)  
+🔗 [GitHub Profile](https://github.com/anugrahk21)  
+💼 [LinkedIn](https://linkedin.com/in/anugrah-k)
 
 ---
 
