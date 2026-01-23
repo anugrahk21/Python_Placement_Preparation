@@ -12,12 +12,13 @@ for i in range(len(questions)):
     print(f"Q{i+1}: {questions[i]}")
     for j in options[i]: # For accessing the elements of nested list.[[]]
         print(j)
-    ans=input("Enter your answer (a/b/c/d/e): ").lower()
+        ans=input("Enter your answer (a/b/c/d/e): ").lower()
     if (ans==answer[i]):
         marks+=1
         print("Correct!\n")
-    else:
-        
+    elif(ans not in answer):
+        print("Enter a valid answer (a/b/c/d/e)")
+    else: 
         print(f"Wrong!, The correct answer is option: {options[i][answer_number[i]]}\n")
 print(f"Your total score is {marks} out of {len(questions)}.")
 
