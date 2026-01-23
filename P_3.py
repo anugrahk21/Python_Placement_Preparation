@@ -10,6 +10,7 @@ while True:
         print("Access Denied")
 
 
+
 # ATM dispensing cash
 
 withdraw_amount=int(input("Enter amount to withdraw: "))
@@ -23,6 +24,7 @@ elif (withdraw_amount % 200 != 0 and withdraw_amount % 500 != 0 and (withdraw_am
 
 else:
     print("Discharging Amount:", withdraw_amount)
+
 
 
 # Wishing program
@@ -40,6 +42,7 @@ else:
     print("Good Night")
 
 
+
 # Multiplication table of n program
 
 n=int (input("Enter a number: "))
@@ -47,7 +50,9 @@ for i in range(1,11):
     print(n, "X",i,"=", n*i)
 
 
+
 #prime number checker
+
 num=int(input("Enter a number: "))
 prime=True
 if(num<=1):
@@ -59,3 +64,14 @@ for i in range(2,num): #or range(2,num//2+1) to optimize
         break
 if prime:
     print(num,"is a prime number")
+
+
+
+# Palindrome checker
+
+a=input("Enter your string: ")
+if(a==a[::-1]):
+    print("Its a palindrome")
+
+else:
+    print("Its not a palindrome")
