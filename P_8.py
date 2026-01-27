@@ -41,7 +41,7 @@ if __name__ == "__main__":
 
 
 
-#Calculator class with 4 operations and 2 operands
+# Calculator class with 4 operations and 2 operands
 class Calculator:
     def __init__(self,a,b):
         self.a=a
