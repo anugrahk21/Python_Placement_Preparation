@@ -1,5 +1,6 @@
 # OOPs in Python
-'''
+
+# Bank class with deposit, withdraw and balance methods
 class Bank:
     # Constructor
     def __init__(self,name,amount=0):
@@ -71,35 +72,63 @@ if __name__=="__main__":
     operation.mul()
 
 
-'''
+
 # Employee details class
 class Employee:
-    def __init__(self,name,id,exp,m_sal,days):
+    def __init__(self,name,id,exp,m_sal,days,hour):
         self.name=name
         self.id=id
         self.exp=exp
         self.m_sal=m_sal
         self.days=days
+        self.hour=hour
+        self.bonus_amount=0
 
     def sal_cal(self):
         return (self.m_sal/30)*self.days
     
     def bonus(self):
-        if(self.exp>=3 and self.days>=25):
-            print("Bonus applicable")
+        if((self.exp>=3 and self.days>=25) or self.overtime_bonus()==True):
+            self.bonus_amount=(((self.sal_cal()/self.days)/5)*self.hour)
+            print("Monthly Bonus Amount : ",self.bonus_amount) # Bonus for extra hours worked
+            # Calculated by (Monthly sal for days worked/days worked)/5 * extra hours worked
+            # Here, we assume 5 working hours in a day, Monthly sal for days worked/days worked gives sal per day
+            # Dividing by 5 gives sal per hour
+
+            print("Total Monthly Salary (Bonus Applied) : ",self.sal_cal()+self.bonus_amount)
     
+    def overtime_bonus(self):
+        if(self.hour>=10):
+            print("Bonus applicable")
+            print("Extra hour bonus applicable")
+            return True
+        else:
+            print("No extra hour bonus applicable")
+            return False
+
+
     def details(self):
+        print("---------------- Employee Details ----------------")
         print("Name : ",self.name)
         print("ID : ",self.id)
-        print("Absolute Yearly Salary : ",self.m_sal*12)
-        print("Monthly Salary for days worked : ",self.sal_cal())
+        print("Total Experience (in years) : ",self.exp)
+        print("\nSalary Details:")
+        print("Absolute Monthly Salary : ",self.m_sal)
+        print("Monthly Salary (Days worked) : ",self.sal_cal())
+        print("\nBonus Details:")
         self.bonus()
-    
+        print("\nYearly Salary Details:")
+        print("Absolute Yearly Salary : ",self.m_sal*12)
+        print("Total yearly salary (Days Worked) : ",self.sal_cal()*12)
+        print("Total yearly salary (Bonus Applied) : ",(self.sal_cal()*12)+self.bonus_amount*12)
+
 if __name__=="__main__":
     name=input("Enter Employee Name: ")
     id=int(input("Enter Employee ID: "))
     exp=int(input("Enter Employee Experience in years: "))
     m_sal=int(input("Enter Employee Monthly Salary: "))
     days=int(input("Enter number of days worked in month: "))
-    emp=Employee(name,id,exp,m_sal,days)
+    hour=int(input("Enter number of extra hours worked in month: "))
+    print()
+    emp=Employee(name,id,exp,m_sal,days,hour)
     emp.details()
