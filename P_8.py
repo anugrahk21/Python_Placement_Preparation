@@ -1,5 +1,5 @@
 # OOPs in Python
-
+'''
 class Bank:
     # Constructor
     def __init__(self,name,amount=0):
@@ -71,23 +71,35 @@ if __name__=="__main__":
     operation.mul()
 
 
-
+'''
 # Employee details class
 class Employee:
-    def __init__(self,name,id,m_sal):
+    def __init__(self,name,id,exp,m_sal,days):
         self.name=name
         self.id=id
+        self.exp=exp
         self.m_sal=m_sal
+        self.days=days
+
+    def sal_cal(self):
+        return (self.m_sal/30)*self.days
+    
+    def bonus(self):
+        if(self.exp>=3 and self.days>=25):
+            print("Bonus applicable")
     
     def details(self):
         print("Name : ",self.name)
         print("ID : ",self.id)
-        print("Yearly Salary : ",self.m_sal*12)
-
+        print("Absolute Yearly Salary : ",self.m_sal*12)
+        print("Monthly Salary for days worked : ",self.sal_cal())
+        self.bonus()
     
 if __name__=="__main__":
     name=input("Enter Employee Name: ")
     id=int(input("Enter Employee ID: "))
+    exp=int(input("Enter Employee Experience in years: "))
     m_sal=int(input("Enter Employee Monthly Salary: "))
-    emp=Employee(name,id,m_sal)
+    days=int(input("Enter number of days worked in month: "))
+    emp=Employee(name,id,exp,m_sal,days)
     emp.details()
