@@ -1,5 +1,5 @@
 # OOPs
-
+# Encapsulation example
 class Student:
     def __init__(self,name,age,grade,address):
         self.name=name
@@ -85,3 +85,50 @@ if __name__=="__main__":
     mode=input("Enter the mode: ")
     teacher1=OnlineTeacher(name,id,mode)
     teacher1.display()
+
+
+
+# Polymorphism
+# Payment class with details such as payee name, amount and method of payment
+class Payment:
+    def __init__(self,payee,amount,method):
+        self.payee=payee
+        self.amount=amount
+        self.method=method
+    
+    def process_payment(self):
+        print(f"Process of payment of {self.amount} to {self.payee} using {self.method} method")
+
+class CardPayment(Payment):
+    def __init__(self,payee,amount,card_number):
+        super().__init__(payee,amount,"Credit Card")
+        self.card_number=card_number
+    
+    def process_payment(self):
+        super().process_payment()
+        print(f"Successfully transmitted card payment of {self.amount} to {self.payee} using card number {self.card_number}")
+    
+class UPIPayment(Payment):
+    def __init__(self,payee,amount,upi_id):
+        super().__init__(payee,amount,"UPI Payment")
+        self.upi_id=upi_id
+
+    def process_payment(self):
+        super().process_payment()
+        print(f"Successfully transmitted UPI payment of {self.amount} to {self.payee} using UPI Id {self.upi_id}")
+
+if __name__=="__main__":
+    name=input("Enter payee name: ")
+    amount=int(input("Enter your amount: "))
+    mode=input("Enter mode of payment ('upi','card'): ")
+    if mode.lower()=="upi":
+        id=input("Enter your UPI ID: ")
+        payment1=UPIPayment(name,amount,id)
+        payment1.process_payment()
+    elif mode.lower()=="card":
+        card_no=input("Enter your card number: ")
+        payment1=CardPayment(name,amount,card_no)
+        payment1.process_payment()
+    else:
+        print("Invalid mode of payment selected")
+        
