@@ -27,3 +27,61 @@ if __name__=="__main__":
     #to access it we need to make a separate member function
     student1.get_address()
 
+
+
+# Inheritance example
+class Student:
+    def __init__(self,name,age):
+        self.name=name
+        self.age=age
+    def display(self):
+        print("Name : ",self.name)
+        print("Age : ",self.age)
+    
+class GraduateStudent(Student):
+    def __init__(self,name,age,degree):
+        super().__init__(name,age)  # calling parent class constructor
+        self.degree=degree
+    
+    def display(self):
+        super().display()  # calling parent class method display
+        print("Degree : ",self.degree)
+
+if __name__=="__main__":
+    name=input("Enter the name: ")
+    age=int(input("Enter the age: "))
+    degree=input("Enter the degree: ")
+    grad_student=GraduateStudent(name,age,degree)
+    grad_student.display()  #1st-parent(Student) display : Name, Age ;
+                            #2nd-child(GraduateStudent) display : Degree
+
+                            
+
+# Teacher Base class and Online teacher child class example
+
+class Teacher:
+    def __init__(self,name,id):
+        self.name=name
+        self.id=id
+    
+    def display(self):
+        print("Name of teacher: ",self.name)
+        print("ID of teacher: ",self.id)
+
+class OnlineTeacher(Teacher):
+    def __init__(self,name,id,mode):
+        super().__init__(name,id)
+        self.mode=mode
+        self.platform=input("Enter your platform: ")
+    
+    def display(self):
+        super().display()
+        print("The mode of teaching: ",self.mode)
+        print("The platform of teaching: ",self.platform)
+
+if __name__=="__main__":
+    name=input("Enter the name: ")
+    id=int(input("enter the id: "))
+    mode=input("Enter the mode: ")
+    teacher1=OnlineTeacher(name,id,mode)
+    teacher1.display()
